@@ -1,52 +1,86 @@
 package gui;
+
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 
-public class Conjugation extends JFrame implements ActionListener {
+/**
+ * JPanel that displays a setup for conjugating verbs. Includes functions for checking answers
+ * and displaying correct ones.
+ */
+public class Conjugation extends JPanel implements ActionListener {
 
-	private static final long serialVersionUID = -1644384619939394248L;
+	/** Eclipse auto-generated serial ID */
+	private static final long serialVersionUID = 7497640647858167887L;
+
+	/** Color to display for correct answers */
 	private static final Color GREEN = new Color(152, 251, 152);
+
+	/** Color to display for incorrect answers */
 	private static final Color RED = new Color(242, 167, 167);
-	
+
+	/** Text fields for inputting/displaying answers */
 	private final JTextField[] answerFields;
-	private final JButton check, next;
+
+	/** Buttons for performing actions */
+	private final JButton check, showAnswers, clear, next;
+
+	/** The instructions for each verb */
+	private final List<String> instructions;
+
+	/** 
+	 * The correct answers 
+	 * answers.size() = instructions.size()
+	 * answers are arrays of length pronouns.size() for each verb, where answers are in the 
+	 * same order as the pronouns.
+	 */
 	private final List<String[]> answers;
-	private final List<String> verbs;
-	
-	private JLabel verbLabel;
+
+	/** The display for the instructions */
+	private JLabel instructionLabel;
+
+	/** 
+	 * The index of the current verb in the instruction list 
+	 * 0 <= currentQ < instructions.size()
+	 */
 	private int currentQ;
-	
-	public Conjugation(String[] pronouns, List<String> verbs, List<String[]> answers) {
-		if(pronouns == null || verbs == null || answers == null) {
+
+	/**
+	 * Create a new conjugating panel
+	 * @param pronouns the pronouns the verb is to be conjugated for
+	 * @param instructions the instructions for each verb
+	 * @param answers the correct conjugations
+	 * @requires answers are separated into pronouns.size() blocks for each verb, where answers are 
+	 * in the same order as the pronouns.
+	 * @throws IllegalArgumentException if answers.size() != instructions.size()
+	 */
+	public Conjugation(String[] pronouns, List<String> instructions, List<String[]> answers) {
+		if(pronouns == null || instructions == null || answers == null) {
 			throw new IllegalArgumentException("Null parameter to Conjugation constructor");
 		}
-		if(pronouns.length == 0 || verbs.size() == 0 || answers.size() == 0) {
+		if(pronouns.length == 0 || instructions.size() == 0) {
 			throw new IllegalArgumentException("Empty parameter to Conjugation constructor");
 		}
-		if(verbs.size() != answers.size()) {
-			throw new IllegalArgumentException("Unmatched number of questions.");
+		if(instructions.size() != answers.size()) {
+			throw new IllegalArgumentException("Unmatched number of questions to answers.");
 		}
-		
-		this.verbs = verbs;
+
+		this.instructions = instructions;
 		this.answers = answers;
 		currentQ = 0;
-		
-		verbLabel = new JLabel("Conjugate " + verbs.get(currentQ));
+
+		instructionLabel = new JLabel(instructions.get(currentQ));
 		JPanel verbPanel = new JPanel();
-		verbPanel.add(verbLabel);
+		verbPanel.add(instructionLabel);
 		verbPanel.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 
 		final String[] PRONOUNS = pronouns;
@@ -66,60 +100,83 @@ public class Conjugation extends JFrame implements ActionListener {
 
 		check = new JButton("Check");
 		check.addActionListener(this);
-		
+
+		showAnswers = new JButton("Show Answers");
+		showAnswers.addActionListener(this);
+
+		clear = new JButton("Clear");
+		clear.addActionListener(this);
+
 		next = new JButton("Next");
 		next.addActionListener(this);
 
-		GroupLayout layout = new GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
+		GroupLayout layout = new GroupLayout(this);
+		this.setLayout(layout);
 		layout.setAutoCreateGaps(true);
 		layout.setAutoCreateContainerGaps(true);
 
 		layout.setHorizontalGroup(
-			layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+				layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 				.addComponent(verbPanel)
 				.addComponent(conjPanel)
 				.addGroup(
-					layout.createSequentialGroup()
+						layout.createSequentialGroup()
 						.addComponent(check)
+						.addComponent(showAnswers)
+						.addComponent(clear)
 						.addComponent(next)));
 		layout.setVerticalGroup(
-			layout.createSequentialGroup()
+				layout.createSequentialGroup()
 				.addComponent(verbPanel)
 				.addComponent(conjPanel)
 				.addGroup(
-					layout.createParallelGroup()
+						layout.createParallelGroup()
 						.addComponent(check)
+						.addComponent(showAnswers)
+						.addComponent(clear)
 						.addComponent(next)));
-
-		pack();
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void main(String[] args) {
-		String[] ps = {"Yo", "Nosotros", "Tœ", "Vosotros", "ƒl/Ella/Usted", "Ellos/Ellas/Ustedes"}; 
-		String[] as = {"vengo", "venimos", "vienes", "ven’s", "viene", "vienen"};
-		ArrayList<String[]> a = new ArrayList<String[]>();
-		a.add(as);
-		ArrayList<String> v = new ArrayList<String>();
-		v.add("venir");
-		new Conjugation(ps, v, a);
-	}
-
+	/**
+	 * Respond to a button click on the Conjugation panel
+	 * check highlights correct answers with green and incorrect answers with red
+	 * showAnswers replaces all text fields with the correct values and highlight them with green
+	 * clear clears all text fields
+	 * next proceeds to the next verb
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// Check the answers in the textfields and indicate correctness with color
 		if(e.getSource() == check) {
 			for(int i=0; i<answers.get(currentQ).length; i++) {
 				if(answerFields[i].getText().equalsIgnoreCase(answers.get(currentQ)[i])) {
 					answerFields[i].setBackground(GREEN);
 				}
-				else { answerFields[i].setBackground(RED); }
+				else { 
+					answerFields[i].setBackground(RED); 
+				}
 			}
 		}
-		else if(e.getSource() == next) {
-			currentQ = (currentQ+1)%verbs.size();
-			verbLabel.setText("Conjugate " + verbs.get(currentQ));
+		// Display the correct answers
+		else if(e.getSource() == showAnswers) { 
+			for(int i=0; i<answers.get(currentQ).length; i++) {
+				answerFields[i].setText(answers.get(currentQ)[i]);
+				answerFields[i].setBackground(GREEN);
+			}
+		}
+		// Clear all text fields
+		else if(e.getSource() == clear) {
+			for(int i=0; i<answers.get(currentQ).length; i++) {
+				answerFields[i].setText("");
+				answerFields[i].setBackground(Color.WHITE);
+			}
+		}
+		// Move on to the next verb in the list
+		else if(e.getSource() == next) { 
+			currentQ = (currentQ+1) % instructions.size();
+			instructionLabel.setText("Conjugate " + instructions.get(currentQ));
 		}
 	}
 }
+//TODO: add answers
+//TODO: move control for the next button up a level

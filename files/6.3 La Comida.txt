@@ -1,0 +1,16 @@
+VOCABULARY
+el jamón _ ham
+la salchicha _ sausage
+el pavo _ turkey
+el bistec _ steak
+la chuleta de puerco _ pork chops
+el pollo _ chicken
+el pan _ bread
+los huevos _ eggs
+el queso _ cheese
+los vegetales _ vegetables
+la leche _ milk
+las papitas fritas _ potato chips
+los refrescos _ soda
+las frutas _ fruit
+el yogur _ yogurt

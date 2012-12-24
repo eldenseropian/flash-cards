@@ -1,0 +1,34 @@
+VOCABULARY
+el aeropuerto _ airport
+el almacén _ department store
+el apartamento _ apartment
+el banco _ bank
+el barrio _ neighborhood
+el cajero automático _ automated teller machine (ATM)
+la casa _ house
+el centro comercial _ mall
+el cine _ cinema
+el cuarto _ room
+la estación de trenes / autobuses _ train/bus station
+el estacionamiento _ parking lot
+la farmacia _ pharmacy
+el hospital _ hospital
+la iglesia _ church
+la joyeria _ jewelry store
+el mercado _ market
+el mercado al aire libre _ farmer's marker
+el museo _ museum
+la oficina _ office
+la oficina de correos _ post office
+la papelería _ stationary store
+el parque _ park
+la pizzería _ pizzeria
+la plaza _ plaza
+el restaurante _ restaurant
+el supermercado _ supermarket
+el teatro _ theater
+la tienda _ store
+la tienda de equipo deportivo _ sporting goods store
+la tienda de juegos electrónicos _ electronic games store
+la tienda de ropa _ clothing store
+el(la) vecino(a) _ neighbor

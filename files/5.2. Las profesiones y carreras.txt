@@ -1,0 +1,30 @@
+el(la) abogado(a) _ lawyer
+el(la) asistente _ assistant
+el actor/la actriz _ actor/actress
+el(la) arquitecto(a) _ architect
+el(la) artista _ artist
+el(la) bombero(a) _ firefighter
+el(la) camarero(a) _ waiter/waitress
+el(la) carpintero(a) _ carpenter
+el(la) cocinero(a) _ cook, chef
+el(la) contador(a) _ accountant
+el(la) dentista _ dentist
+el(la) dependiente _ salesclerk
+el(la) director(a) de social media _ director of social media
+el(la) diseñador(a) gráfico(a) _ graphic designer
+el(la) dueño(a) de... _ owner of...
+el(la) enfermero(a) _ nurse
+el(la) gerente de... _ manager of...
+el hombre/la mujer de negocios _ businessman/businesswoman
+el(la) ingeniero(a) _ engineer
+el(la) maestro(a) _ teacher
+el(la) mecánico(a) _ mechanic
+el(la) médico(a) _ doctor
+el(la) peluquero(a) _ barber/hairdresser
+el(la) periodista _ journalist
+el(la) plomero(a) _ plumber
+el(la) policía _ policeman/policewoman
+el(la) programador(a) _ programmer
+el(la) secretario(a) _ secretary
+el(la) trabajador(a) _ worker
+el(la) veterinario(a) _ veterinarian

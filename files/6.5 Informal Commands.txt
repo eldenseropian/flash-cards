@@ -1,0 +1,14 @@
+CONJUGATION
+Usted Ustedes
+verb:hablar
+hable hablen
+verb:pensar
+piense piensen
+verb:tener
+tenga tengan
+verb:decir
+diga digan
+verb:escribir
+escriba escriban
+verb:servir
+sirva sirvan

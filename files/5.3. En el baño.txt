@@ -1,0 +1,12 @@
+el cepillo _ brush
+el cepillo de dientes _ toothbrush
+el champú _ shampoo
+el desodorante _ deodorant
+el jabón _ soap
+el maquillaje _ makeup
+la máquina de afeitar _ electric razor
+la pasta de dientes _ toothpaste
+el peine _ comb
+la rasuradora _ razor
+la toalla _ towel
+la toalla de mano _ hand towel

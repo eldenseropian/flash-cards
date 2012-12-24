@@ -1,0 +1,8 @@
+VOCABULARY
+a pie _ on foot
+en autobús _ by bus
+en bicicleta _ on bicycle
+en carro/coche/automóvil _ by car
+en metro _ on the subway
+en tren _ by train
+en/por avión _ by plane

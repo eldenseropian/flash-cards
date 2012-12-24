@@ -1,0 +1,4 @@
+difícil _ difficult
+fácil _ easy
+lento _ slow
+rápido _ fast

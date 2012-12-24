@@ -1,0 +1,11 @@
+aburrido(a) _ bored
+cansado(a) _ tired
+contento(a) _ happy
+enfermo(a) _ sick
+enojado(a) _ angry
+furioso(a) _ furious
+nervioso(a) _ nervous
+ocupado(a) _ busy
+preocupado(a) _ worried
+seguro(a) _ sure
+triste _ sad

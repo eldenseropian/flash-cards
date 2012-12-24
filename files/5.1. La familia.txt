@@ -1,0 +1,31 @@
+la madre/mamá _ mother
+el padre/papá _ father
+los padres _ parents
+la esposa _ wife
+el esposo _ husband
+la hija _ daughter
+el hijo _ son
+la hermana (mayor) _ (older) sister
+el hermano (menor) _ (younger) brother
+la tía _ aunt
+el tío _ uncle
+la prima _ female cousin
+el primo _ male cousin
+la sobrina _ niece
+el sobrino _ nephew
+la abuela _ grandmother
+el abuelo _ grandfather
+la nieta _ granddaughter
+el nieto _ grandson
+la suegra _ mother-in-law
+el suegro _ father-in-law
+la nuera _ daughter-in-law
+el yerno _ son-in-law
+la cuñada _ sister-in-law
+el cuñado _ brother-in-law
+la madrastra _ stepmother
+el padrastro _ stepfather
+la hermanastra _ stepsister
+el hermanastro _ stepbrother
+la media hermana _ half-sister
+el medio hermano _ half-brother

@@ -1,0 +1,33 @@
+ecuatoguineano  /  ecuatoguineana _ Guinea Ecuatorial
+chino  /  china _ China
+coreano / coreana _ Corea
+indio / india _ India
+japonés / japonesa _ Japón
+australiano / australiana _ Australia
+costarricense _ Costa Rica
+cubano / cubana _ Cuba
+dominicano / dominicana _ República Dominicana
+guatemalteco / guatemalteca _ Guatemala
+hondureño / hondureña _ Honduras
+nicaragüense _ Nicaragua
+panameño / panameña _ Panamá
+puertorriqueño / puertorriqueña _ Puerto Rico
+salvadoreño / salvadoreña _ El Salvador
+alemán / alemana _ Alemania
+español / española _ España
+francés / francesa _ Francia
+inglés / inglesa _ Inglaterra
+italiano / italiana _ Italia
+portugués / portuguesa _ Portugal
+canadiense _ Canadá
+estadounidense _ Estados Unidos
+mexicano / mexicana _ México
+argentino / argentina _ Argentina
+boliviano / boliviana _ Bolivia
+chileno / chilena _ Chile
+colombiano / colombiana _ Colombia
+ecuatoriano / ecuatoriana _ Ecuador
+paraguayo / paraguaya _ Paraguay
+peruano / peruana _ Perú
+uruguayo / uruguaya _ Uruguay
+venezolano / venezolana _ Venezuela

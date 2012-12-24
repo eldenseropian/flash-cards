@@ -1,0 +1,11 @@
+amarillo(a) _ yellow
+anaranjado(a) _ orange
+azul _ blue
+blanco(a) _ white
+café/marrón _ brown
+gris _ gray
+morado(a) _ purple
+negro(a) _ black
+rojo(a) _ red
+rosa/rosado(a) _ pink
+verde _ green

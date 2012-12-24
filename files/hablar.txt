@@ -1,0 +1,14 @@
+CONJUGATION
+PRESENT
+Pronouns:Yo, Nosotros, Tú, Vosotros, Él/Ella/Usted, Ellos/Ellas/Ustedes
+Answers:hablo, hablas, habla, hablamos, habláis, hablan
+PROGRESSIVE
+Pronouns:Estar
+Answers:hablando
+PAST
+Pronouns:Yo, Nosotros, Tú, Vosotros, Él/Ella/Usted, Ellos/Ellas/Ustedes
+Answers: hablé, hablaste, habló, hablamos, hablasteis, hablaron
+COMMANDS
+Pronouns:Tú, Tú no, Usted, Usted no, Ustedes, Ustedes no
+Answers: habla, no hables, hable, no hable, hablen, no hablen
+hable hablen

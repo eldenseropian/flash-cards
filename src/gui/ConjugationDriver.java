@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -84,5 +83,6 @@ public class ConjugationDriver extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		currentIndex = (currentIndex + 1) % NUM_VERBS;
 		((CardLayout) panel.getLayout()).show(panel, "" + currentIndex);
+		pack();
 	}
 }

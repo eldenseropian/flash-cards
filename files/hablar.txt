@@ -1,14 +1,13 @@
 CONJUGATION
-PRESENT
-Pronouns:Yo, Nosotros, T√∫, Vosotros, √âl/Ella/Usted, Ellos/Ellas/Ustedes
-Answers:hablo, hablas, habla, hablamos, habl√°is, hablan
-PROGRESSIVE
+Instruction:Conjugate hablar in the present tense.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:hablo,hablas,habla,hablamos,habláis,hablan
+Instruction:Conjugate hablar in the present progressive.
 Pronouns:Estar
 Answers:hablando
-PAST
-Pronouns:Yo, Nosotros, T√∫, Vosotros, √âl/Ella/Usted, Ellos/Ellas/Ustedes
-Answers: habl√©, hablaste, habl√≥, hablamos, hablasteis, hablaron
-COMMANDS
-Pronouns:T√∫, T√∫ no, Usted, Usted no, Ustedes, Ustedes no
-Answers: habla, no hables, hable, no hable, hablen, no hablen
-hable hablen
+Instruction:Conjugate hablar in the past tense.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:hablé,hablaste,habló,hablamos,hablasteis,hablaron
+Instruction:Conjugate hablar in the imperative.
+Pronouns:Tú,Tú no,Usted,Usted no,Ustedes,Ustedes no
+Answers:habla,no hables,hable,no hable,hablen,no hablen

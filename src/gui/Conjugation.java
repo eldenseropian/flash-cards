@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -34,65 +33,60 @@ public class Conjugation extends JPanel implements ActionListener {
 	/** Buttons for performing actions */
 	private final JButton check, showAnswers, clear, next;
 
-	/** The instructions for each verb */
-	private final List<String> instructions;
-
 	/** 
 	 * The correct answers 
-	 * answers.size() = instructions.size()
-	 * answers are arrays of length pronouns.size() for each verb, where answers are in the 
-	 * same order as the pronouns.
+	 * answers.length == pronouns.length
+	 * answers are in the same order as the pronouns.
 	 */
-	private final List<String[]> answers;
+	private final String[] answers;
 
 	/** The display for the instructions */
 	private JLabel instructionLabel;
 
-	/** 
-	 * The index of the current verb in the instruction list 
-	 * 0 <= currentQ < instructions.size()
-	 */
-	private int currentQ;
-
+	/** Spacing for the pronouns and text fields */
+	private static final int GRID_LAYOUT_MARGIN = 5;
+	
+	/** Two columns of pronouns and two of the text fields */
+	private static final int NUM_COLS = 4;
+	
 	/**
 	 * Create a new conjugating panel
 	 * @param pronouns the pronouns the verb is to be conjugated for
-	 * @param instructions the instructions for each verb
+	 * @param instructions the instructions for conjugating the verb
 	 * @param answers the correct conjugations
-	 * @requires answers are separated into pronouns.size() blocks for each verb, where answers are 
-	 * in the same order as the pronouns.
-	 * @throws IllegalArgumentException if answers.size() != instructions.size()
+	 * @requires answers are in the same order as the pronouns.
+	 * @throws IllegalArgumentException if answers.length != pronouns.length or any parameters
+	 * are empty or null
 	 */
-	public Conjugation(String[] pronouns, List<String> instructions, List<String[]> answers) {
+	public Conjugation(String[] pronouns, String instructions, String[] answers) {
 		if(pronouns == null || instructions == null || answers == null) {
 			throw new IllegalArgumentException("Null parameter to Conjugation constructor");
 		}
-		if(pronouns.length == 0 || instructions.size() == 0) {
+		if(pronouns.length == 0 || instructions.length() == 0) {
 			throw new IllegalArgumentException("Empty parameter to Conjugation constructor");
 		}
-		if(instructions.size() != answers.size()) {
+		if(pronouns.length != answers.length) {
 			throw new IllegalArgumentException("Unmatched number of questions to answers.");
 		}
 
-		this.instructions = instructions;
 		this.answers = answers;
-		currentQ = 0;
 
-		instructionLabel = new JLabel(instructions.get(currentQ));
+		// Create instruction panel at the top
+		instructionLabel = new JLabel(instructions);
 		JPanel verbPanel = new JPanel();
 		verbPanel.add(instructionLabel);
 		verbPanel.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 
-		final String[] PRONOUNS = pronouns;
-		final int NUM_PRONOUNS = PRONOUNS.length;
-		JLabel[] pronounLabels = new JLabel[NUM_PRONOUNS];
-		answerFields = new JTextField[NUM_PRONOUNS];
+		JLabel[] pronounLabels = new JLabel[pronouns.length];
+		answerFields = new JTextField[pronouns.length];
 
 		JPanel conjPanel = new JPanel();
-		conjPanel.setLayout(new GridLayout(NUM_PRONOUNS/2, 4, 5, 5));
+		// pronoun | text field | pronoun | text field
+		conjPanel.setLayout(new GridLayout((int) Math.ceil(pronouns.length/2.0), NUM_COLS, 
+				GRID_LAYOUT_MARGIN, GRID_LAYOUT_MARGIN));
 
-		for(int i=0; i<NUM_PRONOUNS; i++) {
-			pronounLabels[i] = new JLabel(PRONOUNS[i]);
+		for(int i=0; i<pronouns.length; i++) {
+			pronounLabels[i] = new JLabel(pronouns[i]);
 			answerFields[i] = new JTextField(); 
 			conjPanel.add(pronounLabels[i]);
 			conjPanel.add(answerFields[i]);
@@ -148,8 +142,8 @@ public class Conjugation extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// Check the answers in the textfields and indicate correctness with color
 		if(e.getSource() == check) {
-			for(int i=0; i<answers.get(currentQ).length; i++) {
-				if(answerFields[i].getText().equalsIgnoreCase(answers.get(currentQ)[i])) {
+			for(int i=0; i<answers.length; i++) {
+				if(answerFields[i].getText().equalsIgnoreCase(answers[i])) {
 					answerFields[i].setBackground(GREEN);
 				}
 				else { 
@@ -159,24 +153,29 @@ public class Conjugation extends JPanel implements ActionListener {
 		}
 		// Display the correct answers
 		else if(e.getSource() == showAnswers) { 
-			for(int i=0; i<answers.get(currentQ).length; i++) {
-				answerFields[i].setText(answers.get(currentQ)[i]);
+			for(int i=0; i<answers.length; i++) {
+				answerFields[i].setText(answers[i]);
 				answerFields[i].setBackground(GREEN);
 			}
 		}
 		// Clear all text fields
-		else if(e.getSource() == clear) {
-			for(int i=0; i<answers.get(currentQ).length; i++) {
-				answerFields[i].setText("");
-				answerFields[i].setBackground(Color.WHITE);
-			}
+		else if(e.getSource() == clear || e.getSource() == next) {
+			clear();
 		}
-		// Move on to the next verb in the list
-		else if(e.getSource() == next) { 
-			currentQ = (currentQ+1) % instructions.size();
-			instructionLabel.setText("Conjugate " + instructions.get(currentQ));
+	}
+	
+	/** Add an ActionListener to the "Next" button */
+	public void addActionListenerToNext(ActionListener listener) {
+		next.addActionListener(listener);
+	}
+	
+	/**
+	 * Set the text of all text fields to empty and set the color to white
+	 */
+	private void clear() {
+		for(int i=0; i<answers.length; i++) {
+			answerFields[i].setText("");
+			answerFields[i].setBackground(Color.WHITE);
 		}
 	}
 }
-//TODO: add answers
-//TODO: move control for the next button up a level

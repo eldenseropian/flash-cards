@@ -1,0 +1,22 @@
+el invierno _ winter
+la primavera _ spring
+el verano _ summer
+el otoño _ fall
+¿Qué tiempo hace? _ What's the weather like?
+Hace buen/mal tiempo _ It's nice/bad weather
+Hace calor _ It's hot
+Hace fresco _ It's cool
+Hace frío _ It's cold
+Hace sol _ It's sunny
+Hace viento _ It's windy
+Está lloviendo/Llueve _ It's raining
+Está nevando/Nieva _ It's snowing
+Está nublado _ It's cloudy
+grados Celsio(s) _ degrees Celsius
+grados Fahrenheit _ degrees Fahrenheit
+La temperatura está a... _ The temperature is…
+anoche _ last night
+anteayer _ the day before yesterday
+el año pasado _ last year
+el mes pasado _ last month
+la semana pasada _ last week 

@@ -1,0 +1,13 @@
+algo _ something
+alguien _ someone
+algún/alguno(a, os, as) _ some/any
+jamás _ never
+nada _ nothing
+nadie _ no one/nobody
+ni...ni... _ neither...nor...
+ningún/ninguno(a) _ none/no/not any
+nunca _ never
+o...o... _ either...or...
+siempre _ always
+también _ also
+tampoco _ neither/not either

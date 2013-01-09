@@ -1,0 +1,49 @@
+CONJUGATION
+Instruction:Conjugate hablar (regular ar) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:hable,hablemos,hables,habléis,hable,hablen
+Instruction:Conjugate comer (regular er) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:coma,comamos,comas,comáis,coma,coman
+Instruction:Conjugate escribir (regular ir) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:escriba,escribamos,escribas,escribáis,escriba,escriban
+Instruction:Conjugate pensar (stem-changing ar) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:piense,pensemos,pienses,penséis,piense,piensen
+Instruction:Conjugate poder (stem-changing er) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:pueda,podamos,puedas,podáis,pueda,puedan
+Instruction:Conjugate pedir (stem-changing ir) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:pida,pidamos,pidas,pidáis,pida,pidan
+Instruction:Conjugate dormir (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:duerma,durmamos,duermas,durmáis,duerma,duerman
+Instruction:Conjugate morir (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:muera,muramos,mueras,muráis,muera,mueran
+Instruction:Conjugate buscar (-car) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:busque,busquemos,busques,busquéis,busque,busquen
+Instruction:Conjugate llegar (-gar) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:llegue,lleguemos,llegues,lleguéis,llegue,lleguen
+Instruction:Conjugate comenzar (-zar) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:comience,comencemos,comiences,comencéis,comience,comiencen
+Instruction:Conjugate dar (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:dé,demos,des,deis,dé,den
+Instruction:Conjugate estar (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:esté,estemos,estés,estéis,esté,estén
+Instruction:Conjugate ir (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:vaya,vayamos,vayas,vayáis,vaya,vayan
+Instruction:Conjugate saber (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:sepa,sepamos,sepas,sepáis,sepa,sepan
+Instruction:Conjugate ser (irregular) in the subjunctive.
+Pronouns:Yo,Nosotros,Tú,Vosotros,Él/Ella/Usted,Ellos/Ellas/Ustedes
+Answers:sea,seamos,seas,seáis,sea,sean

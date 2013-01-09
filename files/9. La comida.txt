@@ -1,0 +1,14 @@
+el menú _ menu
+el cereal _ cereal
+los huevos estrellados _ eggs sunnyside up
+los huevos revueltos _ scrambled eggs
+el pan tostado _ toast
+el desayuno _ breakfast
+el almuerzo _ lunch
+la ensalada de fruta _ fruit salad
+la ensalada de lechuga y tomate _ lettuce and tomato salad
+la ensalada de papa _ potato salad
+la ensalada mixta _ tossed salad
+las sopas _ soups
+el caldo de pollo _ chicken soup
+el gazpacho _ cold, tomato-based soup

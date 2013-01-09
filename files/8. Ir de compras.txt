@@ -1,0 +1,26 @@
+el (la) dependiente _ the clerk
+¿Cuál es su talla? _ What is your size?
+¿En qué puedo servirle? _ How can I help you?
+Es muy barato _ It's very inexpensive
+Está a muy buen precio _ It's a very good price
+Está en venta _ It's on sale
+Está rebajado(a) _ It's reduced/on sale
+¿Es un regalo? _ Is it a gift?
+de buena (alta) calidad _ of good (high) quality
+el decuento _ discount
+la oferta especial _ special offer
+el (la) cliente _ the customer
+¿Cuánto cuesta(n)? _ How much does it (do they) cost?
+Es (demasiado) caro _ It's (too) expensive
+¿Lo(La, Los, Las) tiene en una talla...? _ Do you have it/them in a size...?
+Me queda bien/mal _ It fits nicely/badly
+Me queda grande/apretado(a) _ It's too big/tight
+Voy a llevármelo(la, los, las) _ I'm going to take it/them
+Voy a probármelo(la, los, las) _ I'm going to try it/them on
+¿Cómo desea pagar? _ How do you wish to pay?
+Al contado/En efectivo _ In cash
+con cheque _ by check
+con cheque de viajero _ with a traveler's check
+con un préstamo _ with a loan
+con tarjeta de crédito _ with a credit card
+con tarjeta de débito _ with a debit card

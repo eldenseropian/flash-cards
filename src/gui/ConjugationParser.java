@@ -43,6 +43,9 @@ public class ConjugationParser {
 	/** Error thrown if file does not match the grammar */
 	private static final String FILE_FORMAT_ERROR = "File improperly formatted";
 
+	/** Records what has been read so far for help in finding file format errors */
+	private static String forError;
+	
 	public static ConjugationDriver parseConjugation() {
 		JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
 		if(fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION) {
@@ -53,6 +56,7 @@ public class ConjugationParser {
 		List<String[]> pronounList = new ArrayList<String[]>();
 		List<String> instructionList = new ArrayList<String>();
 		List<String[]> conjugationList = new ArrayList<String[]>();
+		forError = "";
 		
 		try{		
 			BufferedReader in = new BufferedReader(new InputStreamReader(
@@ -62,21 +66,24 @@ public class ConjugationParser {
 			}
 			String nextLine;
 			while((nextLine = in.readLine()) != null) {
+				forError += "\n" + nextLine;
 				if(!nextLine.startsWith(INSTRUCTION)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR);
+					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
 				}
 				String instruction = nextLine.substring(nextLine.indexOf(":") + 1);
 				
 				nextLine = in.readLine();
+				forError += "\n" + nextLine;
 				if(!nextLine.startsWith(PRONOUNS)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR);
+					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
 				}
 				String pronounLine = nextLine.substring(nextLine.indexOf(":") + 1);
 				String[] pronouns = pronounLine.split(DELIMITER);
 
 				nextLine = in.readLine();
+				forError += "\n" + nextLine;
 				if(!nextLine.startsWith(ANSWERS)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR);
+					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
 				}
 				String answerLine = nextLine.substring(nextLine.indexOf(":") + 1);
 				String[] answers = answerLine.split(DELIMITER);
@@ -98,3 +105,6 @@ public class ConjugationParser {
 		parseConjugation();
 	}
 }
+//TODO: add back button
+//TODO: button order: clear, show answers, check, next
+//TODO: make back/next triangles

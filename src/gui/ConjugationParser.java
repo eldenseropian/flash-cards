@@ -45,7 +45,11 @@ public class ConjugationParser {
 
 	/** Records what has been read so far for help in finding file format errors */
 	private static String forError;
-	
+
+	/**
+	 * 
+	 * @return
+	 */
 	public static ConjugationDriver parseConjugation() {
 		JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
 		if(fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION) {
@@ -57,50 +61,58 @@ public class ConjugationParser {
 		List<String> instructionList = new ArrayList<String>();
 		List<String[]> conjugationList = new ArrayList<String[]>();
 		forError = "";
-		
+		BufferedReader in = null;
+
 		try{		
-			BufferedReader in = new BufferedReader(new InputStreamReader(
-					new FileInputStream(file), "UTF-8"));
+			in = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 			if(!in.readLine().equals(HEADER)) {
 				throw new IllegalArgumentException("Incorrect header");
 			}
-			String nextLine;
-			while((nextLine = in.readLine()) != null) {
-				forError += "\n" + nextLine;
-				if(!nextLine.startsWith(INSTRUCTION)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
-				}
-				String instruction = nextLine.substring(nextLine.indexOf(":") + 1);
-				
-				nextLine = in.readLine();
-				forError += "\n" + nextLine;
-				if(!nextLine.startsWith(PRONOUNS)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
-				}
-				String pronounLine = nextLine.substring(nextLine.indexOf(":") + 1);
+			
+			while(in.ready()) {
+				String instruction = processNextLine(in.readLine(), INSTRUCTION);
+
+				String pronounLine = processNextLine(in.readLine(), PRONOUNS);
 				String[] pronouns = pronounLine.split(DELIMITER);
 
-				nextLine = in.readLine();
-				forError += "\n" + nextLine;
-				if(!nextLine.startsWith(ANSWERS)) {
-					throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
-				}
-				String answerLine = nextLine.substring(nextLine.indexOf(":") + 1);
+				String answerLine = processNextLine(in.readLine(), ANSWERS);
 				String[] answers = answerLine.split(DELIMITER);
 
 				pronounList.add(pronouns);
 				instructionList.add(instruction);
 				conjugationList.add(answers);
 			}
-			in.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 			throw new IllegalArgumentException("Failed to parse file");
 		}
+		finally {
+			try{
+				in.close();
+			}
+			catch(IOException e) {
+				throw new RuntimeException();
+			}
+		}
 		return new ConjugationDriver(pronounList, instructionList, conjugationList);
 	}
 
+	/**
+	 * Process the next line read from the file by appending it to the file string, asserting
+	 * the command matches the grammar, and returning the parameters following the command
+	 * @param nextLine the line to process
+	 * @param start what the line should start with
+	 * @return the arguments of the line
+	 */
+	private static String processNextLine(String nextLine, String start) {
+		forError += "\n" + nextLine;
+		if(!nextLine.startsWith(start)) {
+			throw new IllegalArgumentException(FILE_FORMAT_ERROR + forError);
+		}
+		return nextLine.substring(nextLine.indexOf(":") + 1);
+	}
+	
 	public static void main(String[] args) {
 		parseConjugation();
 	}

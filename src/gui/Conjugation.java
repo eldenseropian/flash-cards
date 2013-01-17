@@ -66,6 +66,14 @@ public class Conjugation extends JPanel implements ActionListener {
 			throw new IllegalArgumentException("Empty parameter to Conjugation constructor");
 		}
 		if(pronouns.length != answers.length) {
+			for(String p: pronouns) {
+				System.out.print(p);
+			}
+			System.out.println();
+			for(String a: answers) {
+				System.out.print(a);
+			}
+			System.out.println();
 			throw new IllegalArgumentException("Unmatched number of questions to answers.");
 		}
 

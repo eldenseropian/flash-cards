@@ -68,12 +68,18 @@ public class ConjugationParser {
 			if(!in.readLine().equals(HEADER)) {
 				throw new IllegalArgumentException("Incorrect header");
 			}
-			
+
 			while(in.ready()) {
 				String instruction = processNextLine(in.readLine(), INSTRUCTION);
 
 				String pronounLine = processNextLine(in.readLine(), PRONOUNS);
-				String[] pronouns = pronounLine.split(DELIMITER);
+				String[] pronouns;
+				if(pronounLine.indexOf(DELIMITER) != -1) { // pronouns manually in file
+					pronouns = pronounLine.split(DELIMITER);
+				}
+				else { // default pronouns for specified language
+					pronouns = Pronouns.getPronouns(pronounLine);
+				}
 
 				String answerLine = processNextLine(in.readLine(), ANSWERS);
 				String[] answers = answerLine.split(DELIMITER);
@@ -112,7 +118,7 @@ public class ConjugationParser {
 		}
 		return nextLine.substring(nextLine.indexOf(":") + 1);
 	}
-	
+
 	public static void main(String[] args) {
 		parseConjugation();
 	}
@@ -120,3 +126,5 @@ public class ConjugationParser {
 //TODO: add back button
 //TODO: button order: clear, show answers, check, next
 //TODO: make back/next triangles
+//TODO: empty answer
+//TODO: enter performs check, cntl+arrow keys navigate?

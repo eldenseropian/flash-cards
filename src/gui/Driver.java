@@ -12,9 +12,12 @@ import javax.swing.JFileChooser;
 public class Driver {
 	private static CardList cards;
 	private static BufferedReader console;
-	private static final int MARK_LEARNED = 0, QUIT = 1, TRY_AGAIN = 2, SEE_ANSWER = 3, CONTINUE = 4, 
-			RESTART = 4, FLIP = 5, SWITCH_FILES = 6;
+	private static final int MARK_LEARNED = 0, QUIT = 1, TRY_AGAIN = 2, SEE_ANSWER = 3, 
+			CONTINUE = 4, RESTART = 5, FLIP = 6, SWITCH_FILES = 7;
 
+	/**
+	 * Read a card file, shuffle the cards, and begin running the interactive flashcard program.
+	 */
 	public static void main(String[] args) {
 		cards = new CardList();
 		readCards();
@@ -23,8 +26,12 @@ public class Driver {
 	}
 
 	/**
-	 * Read in FlashCards from a file with format
-	 * question _ answer\n
+	 * Read in FlashCards from a file following the grammar:
+	 * FLASHCARD := QUESTION "_" ANSWER end-of-line
+	 * QUESTION := "[^_]"
+	 * ANSWER := "[^_]"
+	 * @throws Exception for invalidly formatted file
+	 * Terminates if no file selected.
 	 */
 	private static void readCards() {
 		cards.clear();
@@ -43,6 +50,11 @@ public class Driver {
 				}
 				in.close();
 			}
+			else {
+				System.err.println("You cannot run this program without a flashcard file. ");
+				quit();
+				//TODO: add create new file option here
+			}
 		}
 		//start with no cards
 		catch (FileNotFoundException e) {}
@@ -58,7 +70,7 @@ public class Driver {
 	}
 
 	/**
-	 * Run the inquisitor!
+	 * Run the interactive flashcard program.
 	 */
 	private static void run() {
 		console = new BufferedReader(new InputStreamReader(System.in));
@@ -102,7 +114,7 @@ public class Driver {
 	 * @return true if a card has been learned
 	 */
 	private static boolean askQuestion(FlashCard card) {
-		System.out.println("QUESTION: " + card.question());
+		System.out.println("\nQUESTION: " + card.question());
 		System.out.print("ANSWER: ");
 		try {
 			String answer = console.readLine();
@@ -158,11 +170,11 @@ public class Driver {
 	 * @return the menu item selected
 	 */
 	private static int incorrectAnswerMenu() {
-		System.out.print("'A' to see the answer, 'T' to try again, 'Q' to quit: ");
+		System.out.print("'A' to see the answer, Enter to try again, 'Q' to quit: ");
 		try {
 			String choice = console.readLine();
 			if(choice.equalsIgnoreCase("A")) { return SEE_ANSWER; }
-			else if(choice.equalsIgnoreCase("T")) { return TRY_AGAIN; }
+			else if(choice.equalsIgnoreCase("")) { return TRY_AGAIN; }
 			else if(choice.equalsIgnoreCase("Q")) { return QUIT; }
 		}
 		catch (IOException e) {}
@@ -172,6 +184,10 @@ public class Driver {
 		return incorrectAnswerMenu();
 	}
 
+	/**
+	 * Display options when all cards have been answered correctly
+	 * @return the menu item selected
+	 */
 	private static int finishedMenu() {
 		System.out.print("'R' to restart, 'F' to flip and restart, 'S' to switch files, " +
 				"'Q' to quit: ");
@@ -187,6 +203,7 @@ public class Driver {
 		System.out.print("Invalid input. ");
 		return finishedMenu();
 	}
+	
 	/**
 	 * Exit the program.
 	 */

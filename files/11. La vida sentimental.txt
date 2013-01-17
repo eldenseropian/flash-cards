@@ -1,6 +1,6 @@
 la alianza _ alliance
 la amistad _ friendship
-las amistades _ firends
+las amistades _ friends
 el amor _ love
 la aventura amorosa _ affair
 la cita _ date
@@ -8,7 +8,8 @@ la cita a ciegas _ blind date
 el noviazgo _ engagement
 el amante _ lover
 el(la) enemigo(a) _ enemy
-el(la) novio(a) _ boyfriend(girlfriend)
+el novio _ boyfriend
+la novia _ girlfriend
 la pareja _ couple
 el(la) querido(a) _ beloved
 el(la) rompecorazones _ heartbreaker
@@ -37,7 +38,7 @@ estar peleados _ to be on the outs/to be broken up
 hacerse amigos(as) _ to become friends
 impresionar _ to impress
 llevarse bien/mal con _ to get along well/badly with
-alvidar _ to forget
+olvidar _ to forget
 perdonar _ to forgive
 recapitular _ to sum up/to recap
 romper con _ to break up with

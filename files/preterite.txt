@@ -1,0 +1,91 @@
+CONJUGATION
+Instruction:Conjugate bailar (regular ar) in the preterite.
+Pronouns:SPANISH
+Answers:bailé,bailamos,bailaste,bailasteis,bailó,bailaron
+Instruction:Conjugate comer (regular er) in the preterite.
+Pronouns:SPANISH
+Answers:comí,comimos,comiste,comisteis,comió,comieron
+Instruction:Conjugate escribir (regular ir) in the preterite.
+Pronouns:SPANISH
+Answers:escribí,escribimos,escribiste,escribisteis,escribió,escribieron
+Instruction:Conjugate sacar (-car) in the preterite.
+Pronouns:SPANISH
+Answers:saqué,sacamos,sacaste,sacasteis,sacó,sacaron
+Instruction:Conjugate llegar (-gar) in the preterite.
+Pronouns:SPANISH
+Answers:llegué,llegamos,llegaste,llegasteis,llegó,llegaron
+Instruction:Conjugate cruzar (-zar) in the preterite.
+Pronouns:SPANISH
+Answers:crucé,cruzamos,cruzaste,cruzasteis,cruzó,cruzaron
+Instruction:Conjugate leer (like creer) in the preterite.
+Pronouns:SPANISH
+Answers:leí,leímos,leíste,leísteis,leyó,leyeron
+Instruction:Conjugate oír (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:oí,oímos,oíste,oísteis,oyó,oyeron
+Instruction:Conjugate estar (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:estuve,estuvimos,estuviste,estuvisteis,estuvo,estuvieron
+Instruction:Conjugate hacer (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:hice,hicimos,hiciste,hicisteis,hizo,hicieron
+Instruction:Conjugate ir (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:fui,fuimos,fuiste,fuisteis,fue,fueron
+Instruction:Conjugate ser (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:fui,fuimos,fuiste,fuisteis,fue,fueron
+Instruction:Conjugate dar (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:di,dimos,diste,disteis,dio,dieron
+Instruction:Conjugate ver (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:vi,vimos,viste,visteis,vio,vieron
+Instruction:Conjugate decir (irregular, -cir) in the preterite.
+Pronouns:SPANISH
+Answers:dije,dijimos,dijiste,dijisteis,dijo,dijeron
+Instruction:Conjugate traer (irregular, -cir) in the preterite.
+Pronouns:SPANISH
+Answers:traje,trajimos,trajiste,trajisteis,trajo,trajeron
+Instruction:Conjugate andar (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:anduve,anduvimos,anduviste,anduvisteis,anduvo,anduvieron
+Instruction:Conjugate tener (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:tuve,tuvimos,tuviste,tuvisteis,tuvo,tuvieron
+Instruction:Conjugate poder (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:pude,pudimos,pudiste,pudisteis,pudo,pudieron
+Instruction:Conjugate poner (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:puse,pusimos,pusiste,pusisteis,puso,pusieron
+Instruction:Conjugate saber (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:supe,supimos,supiste,supisteis,supo,supieron
+Instruction:Conjugate haber (irregular) in the preterite.
+Pronouns:SPANISH
+Answers: , , , ,hubo, 
+Instruction:Conjugate querer (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:quise,quisimos,quisiste,quisisteis,quiso,quisieron
+Instruction:Conjugate venir (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:vine,vinimos,viniste,vinisteis,vino,vinieron
+Instruction:Conjugate preferir (stem-changing -ir, like divertirse, sentirse, sugerir) in the preterite.
+Pronouns:SPANISH
+Answers:preferí,preferimos,preferiste,preferisteis,prefirió,prefirieron
+Instruction:Conjugate pedir (stem-changing -ir, like despedirse, reírse, repetir, seguir, servir, vestir, vestirse, conseguir, sonreír) in the preterite.
+Pronouns:SPANISH
+Answers:pedí,pedimos,pediste,pedisteis,pidió,pidieron
+Instruction:Conjugate dormir (stem-changing -ir, like morirse) in the preterite.
+Pronouns:SPANISH
+Answers:dormí,dormimos,dormiste,dormisteis,durmió,durmieron
+Instruction:Conjugate sentir in the preterite.
+Pronouns:SPANISH
+Answers:sentí,sentimos,sentiste,sentisteis,sintió,sintieron
+Instruction:Conjugate reír (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:reí,reímos,reíste,reísteis,rio,rieron
+Instruction:Conjugate caer (irregular) in the preterite.
+Pronouns:SPANISH
+Answers:caí,caímos,caíste,caísteis,cayó,cayeron

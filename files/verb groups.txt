@@ -1,0 +1,25 @@
+verbs like gustar:
+encantar
+fascinar
+importar
+interesar
+molestar
+
+irregular yo with -go:
+hacer
+poner
+salir
+traer
+decir
+venir
+
+irregular yo with -zco:
+conducir
+conocer
+traducir
+
+irregular irregular yo:
+dar
+oír
+saber
+ver

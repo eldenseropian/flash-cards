@@ -1,0 +1,40 @@
+CONJUGATION:
+Instruction:Give the past participle of trabajar (regular -ar).
+Pronouns:
+Answers:trabajado
+Instruction:Give the past participle of conocer (regular -er).
+Pronouns:
+Answers:conocido
+Instruction:Give the past participle of compartir (regular -ir).
+Pronouns:
+Answers:compartido
+Instruction:Give the past participle of abrir (irregular).
+Pronouns:
+Answers:abierto
+Instruction:Give the past participle of decir (irregular).
+Pronouns:
+Answers:dicho
+Instruction:Give the past participle of escribir (irregular).
+Pronouns:
+Answers:escrito
+Instruction:Give the past participle of morir (irregular).
+Pronouns:
+Answers:muerto
+Instruction:Give the past participle of poner (irregular).
+Pronouns:
+Answers:puesto
+Instruction:Give the past participle of romper (irregular).
+Pronouns:
+Answers:roto
+Instruction:Give the past participle of satisfacer (irregular).
+Pronouns:
+Answers:satisfecho
+Instruction:Give the past participle of ver (irregular).
+Pronouns:
+Answers:visto
+Instruction:Give the past participle of volver (irregular).
+Pronouns:
+Answers:vuelto
+Instruction:Give the past participle of leer (a/e/o preceding i).
+Pronouns:
+Answers:leído

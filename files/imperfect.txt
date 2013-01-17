@@ -1,0 +1,19 @@
+CONJUGATION
+Instruction:Conjugate cenar (regular -ar) in the imperfect.
+Pronouns:SPANISH
+Answers:cenaba,cenábamos,cenabas,cenabais,cenaba,cenaban
+Instruction:Conjugate comer (regular -er) in the imperfect.
+Pronouns:SPANISH
+Answers:comía,comíamos,comías,comíais,comía,comían
+Instruction:Conjugate pedir (regular -ir) in the imperfect.
+Pronouns:SPANISH
+Answers:pedía,pedíamos,pedías,pedíais,pedía,pedían
+Instruction:Conjugate ir (irregular) in the imperfect.
+Pronouns:SPANISH
+Answers:iba,íbamos,ibas,ibais,iba,iban
+Instruction:Conjugate ser (irregular) in the imperfect.
+Pronouns:SPANISH
+Answers:era,éramos,eras,erais,era,eran
+Instruction:Conjugate ver (irregular) in the imperfect.
+Pronouns:SPANISH
+Answers:veía,veíamos,veías,veíais,veía,veían

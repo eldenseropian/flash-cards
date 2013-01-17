@@ -1,0 +1,61 @@
+CONJUGATION
+Instruction:Conjugate bailar (regular -ar) in the present tense.
+Pronouns:SPANISH
+Answers:bailo,bailamos,bailas,bailáis,baila,bailan
+Instruction:Conjugate comer (regular -er) in the present tense.
+Pronouns:SPANISH
+Answers:como,comemos,comes,coméis,come,comen
+Instruction:Conjugate vivir (regular -ir) in the present tense.
+Pronouns:SPANISH
+Answers:vivo,vivimos,vives,vivís,vive,viven
+Instruction:Conjugate gustar (irregular) in the present tense.
+Pronouns:A mí,a nosotros,a ti,a vosotros, a él,a ellas
+Answers:me gusta,nos gusta,te gusta,os gusta,le gusta,les gusta
+Instruction:Conjugate ser (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:soy,somos,eres,sois,es,son
+Instruction:Conjugate estar (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:estoy,estamos,estás,estáis,está,están
+Instruction:Conjugate tener (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:tengo,tenemos,tienes,tenéis,tiene,tienen
+Instruction:Conjugate ir (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:voy,vamos,vas,vais,va,van
+Instruction:Conjugate encontrar (stem change) in the present tense.
+Pronouns:SPANISH
+Answers:encuentro,encontramos,encuentras,encontráis,encuentra,encuentran
+Instruction:Conjugate preferir (stem change) in the present tense.
+Pronouns:SPANISH
+Answers:prefiero,preferimos,prefieres,preferís,prefiere,prefieren
+Instruction:Conjugate pedir (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:pido,pedimos,pides,pedís,piede,piden
+Instruction:Conjugate hacer (like poner, salir, traer) in the present tense.
+Pronouns:SPANISH
+Answers:hago,hacemos,haces,hacéis,hace,hacen
+Instruction:Conjugate conducir (like conocer, traducir) in the present tense.
+Pronouns:SPANISH
+Answers:conduzco,conducimos,conduces,conducís,conduce,conducen
+Instruction:Conjugate decir (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:digo,decimos,dices,decís,dice,dicen
+Instruction:Conjugate venir (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:vengo,venimos,vienes,venís,viene,vienen
+Instruction:Conjugate dar (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:doy,damos,das,dais,da,dan
+Instruction:Conjugate oír (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:oigo,oimos,oyes,oís,oye,oyen
+Instruction:Conjugate saber (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:sé,sabemos,sabes,sabéis,sabe,saben
+Instruction:Conjugate ver (irregular) in the present tense.
+Pronouns:SPANISH
+Answers:veo,vemos,ves,veis,ve,ven
+Instruction:Conjugate lavarse (reflexive) in the present tense.
+Pronouns:SPANISH
+Answers:me lavo,nos lavamos,te lavas,os laváis,se lava,se lavan

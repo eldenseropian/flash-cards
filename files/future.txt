@@ -1,0 +1,37 @@
+CONJUGATION
+Instruction:Conjugate hablar (regular -ar) in the future tense.
+Pronouns:SPANISH
+Answers:hablaré,hablaremos,hablarás,hablaréis,hablará,hablarán
+Instruction:Conjugate comer (regular -er) in the future tense.
+Pronouns:SPANISH
+Answers:comeré,comeremos,comerás,comeréis,comerá,comerán
+Instruction:Conjugate escribir (regular -ir) in the future tense.
+Pronouns:SPANISH
+Answers:escribiré,escribiremos,escribirás,escribiréis,escribirá,escribirán
+Instruction:Conjugate decir (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:diré,diremos,dirás,diréis,dirá,dirán
+Instruction:Conjugate hacer (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:haré,haremos,harás,haréis,hará,harán
+Instruction:Conjugate poder (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:podré,podremos,podrás,podréis,podrá,podrán
+Instruction:Conjugate querer (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:querré,querremos,querrás,querréis,querrá,querrán
+Instruction:Conjugate saber (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:sabré,sabremos,sabrás,sabréis,sabrá,sabrán
+Instruction:Conjugate poner (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:pondré,pondremos,pondrás,pondréis,pondrá,pondrán
+Instruction:Conjugate salir (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:saldré,saldremos,saldrás,saldréis,saldrá,saldrán
+Instruction:Conjugate tener (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:tendré,tendremos,tendrás,tendréis,tendrá,tendrán
+Instruction:Conjugate venir (irregular) in the future tense.
+Pronouns:SPANISH
+Answers:vendré,vendremos,vendrás,vendréis,vendrá,vendrán

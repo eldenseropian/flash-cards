@@ -1,0 +1,10 @@
+CONJUGATION
+Instruction:Conjugate haber in the present perfect tense
+Prounouns:SPANISH
+Answers:he,hemos,has,habéis,ha,han
+Instruction:Conjugate haber in the past perfect tense
+Prounouns:SPANISH
+Answers:había,habíamos,habías,habíais,había,habían
+Instruction:Conjugate haber in the present perfect subjunctive
+Prounouns:SPANISH
+Answers:haya,hayamos,hayas,hayáis,haya,hayan

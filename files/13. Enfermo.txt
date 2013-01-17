@@ -1,0 +1,94 @@
+la boca _ mouth
+el brazo _ arm
+la cabeza _ head
+el codo _ elbow
+el corazón _ heart
+el cuello _ neck
+el dedo _ finger/toe
+la espalda _ back
+el estómago _ stomach
+la garganta _ throat
+el hombro _ shoulder
+la lengua _ tongue
+la mano _ hand
+la nariz _ nose
+el oído _ inner ear
+el ojo _ eye
+la oreja _ ear
+el pecho _ chest
+el pie _ foot
+la pierna _ leg
+el pulmón _ lung
+la rodilla _ knee
+la sangre _ blood
+el tobillo _ ankle
+quebrado/roto _ broken
+torcido _ twisted
+la alergia _ allergy
+el catarro/el resfriado _ cold
+el dolor _ pain/ache
+el dolor de la cabeza _ headache
+el dolor de estómago _ stomachache
+el dolor de garganta _ sore throat
+la enfermedad _ sickness/illness
+la fiebre _ fever
+la fractura _ fracture
+la gripe _ flu
+la herida _ injury/wound
+la infección _ infection
+las náuseas _ nausea
+la tos _ cough
+cortarse _ to cut oneself
+desmayarse _ to faint
+dolerle _ to hurt
+estar congestionado(a) _ to be congested
+estar mareado(a) _ to feel dizzy
+estornudar _ to sneeze
+lastimarse _ to hurt/injure oneself
+palpitar _ to palpitate
+resfriarse _ to get chilled/to catch cold
+toser _ to cough
+vomitar _ to throw up
+el chequeo médico _ physical/checkup
+la cita _ appointment
+la clínica _ clinic
+la sala de emergencias _ emergency room
+la sala de espera _ waiting room
+la salud _ health
+Lo(La) voy a examinar _ I'm going to examine you
+¿Qué le duele? _ What hurts?
+¿Qué síntomas tiene? _ What are your symptons?
+abra la boca _ open your mouth
+respire hondo _ breathe deeply
+saque la lengua _ stick out your tongue
+trague _ swallow
+el cuerpo _ body
+el consultorio del médico _ doctor's office
+hacer un análisis de sangre/orina _ give you a blood/urine test
+poner una inyección _ give you an injection
+poner una vacuna _ vaccinate you
+recetar una medicina _ prescribe a medicine
+tomar la presión _ take your blood pressure
+tomar la temperatura _ take your temperature
+tomar/hacer una radiografía _ take an X-ray
+le aconsejo que _ I advise you to
+coma alimentos nutritivos _ eat healthy foods
+duerma más _ sleep more
+guarde cama _ stay in bed
+haga ejercicio regularmente _ exercise regularly
+lleve una vida sana _ lead a healthy life
+¡Ojalá se mejore pronto! _ I hope you'll get better soon!
+el antibiótico _ antibiotic
+la aspirinia _ aspirin
+la crema _ cream
+la curita/la tirita _ small bandage
+las gotas _ drops
+las hierbas _ herbs
+el jarabe (para la tos) _ (cough) syrup
+las muletas _ crutches
+la pastilla _ tablet
+la píldora _ pill
+la receta _ prescription
+la venda de gasa _ gauze bandage
+la vitamina _ vitamin
+el yeso _ cast

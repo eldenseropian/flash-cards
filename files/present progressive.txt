@@ -1,0 +1,22 @@
+CONJUGATION
+Instruction:Conjugate caminar (regular -ar) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:caminando
+Instruction:Conjugate ver (regular -er) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:viendo
+Instruction:Conjugate escribir (regular -ir) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:escribiendo
+Instruction:Conjugate despedirse (stem-changing -ir) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:despidiéndose
+Instruction:Conjugate dormir (like morir) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:durmiendo
+Instruction:Conjugate leer (irregular) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:leyendo
+Instruction:Conjugate oír (irregular) in the present progressive.
+Pronouns:estoy/estás/está/estamos/estáis/estan
+Answers:oyendo

@@ -13,177 +13,182 @@ import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 
 /**
- * JPanel that displays a setup for conjugating verbs. Includes functions for checking answers
+ * JPanel that displays a setup for conjugating verbs. Includes functions for
+ *     checking answers
  * and displaying correct ones.
  */
 public class Conjugation extends JPanel implements ActionListener {
 
-	/** Eclipse auto-generated serial ID */
-	private static final long serialVersionUID = 7497640647858167887L;
+  /** Eclipse auto-generated serial ID */
+  private static final long serialVersionUID = 7497640647858167887L;
 
-	/** Color to display for correct answers */
-	private static final Color GREEN = new Color(152, 251, 152);
+  /** Color to display for correct answers */
+  private static final Color GREEN = new Color(152, 251, 152);
 
-	/** Color to display for incorrect answers */
-	private static final Color RED = new Color(242, 167, 167);
+  /** Color to display for incorrect answers */
+  private static final Color RED = new Color(242, 167, 167);
 
-	/** Text fields for inputting/displaying answers */
-	private final JTextField[] answerFields;
+  /** Text fields for inputting/displaying answers */
+  private final JTextField[] answerFields;
 
-	/** Buttons for performing actions */
-	private final JButton check, showAnswers, clear, next;
+  /** Buttons for performing actions */
+  private final JButton check, showAnswers, clear, next;
 
-	/** 
-	 * The correct answers 
-	 * answers.length == pronouns.length
-	 * answers are in the same order as the pronouns.
-	 */
-	private final String[] answers;
+  /** 
+   * The correct answers 
+   * answers.length == pronouns.length
+   * answers are in the same order as the pronouns.
+   */
+  private final String[] answers;
 
-	/** The display for the instructions */
-	private JLabel instructionLabel;
+  /** The display for the instructions */
+  private JLabel instructionLabel;
 
-	/** Spacing for the pronouns and text fields */
-	private static final int GRID_LAYOUT_MARGIN = 5;
-	
-	/** Two columns of pronouns and two of the text fields */
-	private static final int NUM_COLS = 4;
-	
-	/**
-	 * Create a new conjugating panel
-	 * @param pronouns the pronouns the verb is to be conjugated for
-	 * @param instructions the instructions for conjugating the verb
-	 * @param answers the correct conjugations
-	 * @requires answers are in the same order as the pronouns.
-	 * @throws IllegalArgumentException if answers.length != pronouns.length or any parameters
-	 * are empty or null
-	 */
-	public Conjugation(String[] pronouns, String instructions, String[] answers) {
-		if(pronouns == null || instructions == null || answers == null) {
-			throw new IllegalArgumentException("Null parameter to Conjugation constructor");
-		}
-		if(pronouns.length == 0 || instructions.length() == 0) {
-			throw new IllegalArgumentException("Empty parameter to Conjugation constructor");
-		}
-		if(pronouns.length != answers.length) {
-			for(String p: pronouns) {
-				System.out.print(p);
-			}
-			System.out.println();
-			for(String a: answers) {
-				System.out.print(a);
-			}
-			System.out.println();
-			throw new IllegalArgumentException("Unmatched number of questions to answers.");
-		}
+  /** Spacing for the pronouns and text fields */
+  private static final int GRID_LAYOUT_MARGIN = 5;
 
-		this.answers = answers;
+  /** Two columns of pronouns and two of the text fields */
+  private static final int NUM_COLS = 4;
 
-		// Create instruction panel at the top
-		instructionLabel = new JLabel(instructions);
-		JPanel verbPanel = new JPanel();
-		verbPanel.add(instructionLabel);
-		verbPanel.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+  /**
+   * Create a new conjugating panel
+   * @param pronouns the pronouns the verb is to be conjugated for
+   * @param instructions the instructions for conjugating the verb
+   * @param answers the correct conjugations
+   * @requires answers are in the same order as the pronouns.
+   * @throws IllegalArgumentException if answers.length != pronouns.length or
+   *     any parameters are empty or null
+   */
+  public Conjugation(String[] pronouns, String instructions, String[] answers) {
+    if(pronouns == null || instructions == null || answers == null) {
+      throw new IllegalArgumentException(
+              "Null parameter to Conjugation constructor");
+    }
+    if(pronouns.length == 0 || instructions.length() == 0) {
+      throw new IllegalArgumentException(
+              "Empty parameter to Conjugation constructor");
+    }
+    if(pronouns.length != answers.length) {
+      for(String p: pronouns) {
+        System.out.print(p);
+      }
+      System.out.println();
+      for(String a: answers) {
+        System.out.print(a);
+      }
+      System.out.println();
+      throw new IllegalArgumentException(
+              "Unmatched number of questions to answers.");
+    }
 
-		JLabel[] pronounLabels = new JLabel[pronouns.length];
-		answerFields = new JTextField[pronouns.length];
+    this.answers = answers;
 
-		JPanel conjPanel = new JPanel();
-		// pronoun | text field | pronoun | text field
-		conjPanel.setLayout(new GridLayout((int) Math.ceil(pronouns.length/2.0), NUM_COLS, 
-				GRID_LAYOUT_MARGIN, GRID_LAYOUT_MARGIN));
+    // Create instruction panel at the top
+    instructionLabel = new JLabel(instructions);
+    JPanel verbPanel = new JPanel();
+    verbPanel.add(instructionLabel);
+    verbPanel.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 
-		for(int i=0; i<pronouns.length; i++) {
-			pronounLabels[i] = new JLabel(pronouns[i]);
-			answerFields[i] = new JTextField(); 
-			conjPanel.add(pronounLabels[i]);
-			conjPanel.add(answerFields[i]);
-		}
+    JLabel[] pronounLabels = new JLabel[pronouns.length];
+    answerFields = new JTextField[pronouns.length];
 
-		check = new JButton("Check");
-		check.addActionListener(this);
+    JPanel conjPanel = new JPanel();
+    // pronoun | text field | pronoun | text field
+    conjPanel.setLayout(new GridLayout((int) Math.ceil(pronouns.length/2.0),
+            NUM_COLS, GRID_LAYOUT_MARGIN, GRID_LAYOUT_MARGIN));
 
-		showAnswers = new JButton("Show Answers");
-		showAnswers.addActionListener(this);
+    for(int i=0; i<pronouns.length; i++) {
+      pronounLabels[i] = new JLabel(pronouns[i]);
+      answerFields[i] = new JTextField(); 
+      conjPanel.add(pronounLabels[i]);
+      conjPanel.add(answerFields[i]);
+    }
 
-		clear = new JButton("Clear");
-		clear.addActionListener(this);
+    check = new JButton("Check");
+    check.addActionListener(this);
 
-		next = new JButton("Next");
-		next.addActionListener(this);
+    showAnswers = new JButton("Show Answers");
+    showAnswers.addActionListener(this);
 
-		GroupLayout layout = new GroupLayout(this);
-		this.setLayout(layout);
-		layout.setAutoCreateGaps(true);
-		layout.setAutoCreateContainerGaps(true);
+    clear = new JButton("Clear");
+    clear.addActionListener(this);
 
-		layout.setHorizontalGroup(
-				layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-				.addComponent(verbPanel)
-				.addComponent(conjPanel)
-				.addGroup(
-						layout.createSequentialGroup()
-						.addComponent(check)
-						.addComponent(showAnswers)
-						.addComponent(clear)
-						.addComponent(next)));
-		layout.setVerticalGroup(
-				layout.createSequentialGroup()
-				.addComponent(verbPanel)
-				.addComponent(conjPanel)
-				.addGroup(
-						layout.createParallelGroup()
-						.addComponent(check)
-						.addComponent(showAnswers)
-						.addComponent(clear)
-						.addComponent(next)));
-	}
+    next = new JButton("Next");
+    next.addActionListener(this);
 
-	/**
-	 * Respond to a button click on the Conjugation panel
-	 * check highlights correct answers with green and incorrect answers with red
-	 * showAnswers replaces all text fields with the correct values and highlight them with green
-	 * clear clears all text fields
-	 * next proceeds to the next verb
-	 */
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// Check the answers in the textfields and indicate correctness with color
-		if(e.getSource() == check) {
-			for(int i=0; i<answers.length; i++) {
-				if(answerFields[i].getText().equalsIgnoreCase(answers[i])) {
-					answerFields[i].setBackground(GREEN);
-				}
-				else { 
-					answerFields[i].setBackground(RED); 
-				}
-			}
-		}
-		// Display the correct answers
-		else if(e.getSource() == showAnswers) { 
-			for(int i=0; i<answers.length; i++) {
-				answerFields[i].setText(answers[i]);
-				answerFields[i].setBackground(GREEN);
-			}
-		}
-		// Clear all text fields
-		else if(e.getSource() == clear || e.getSource() == next) {
-			clear();
-		}
-	}
-	
-	/** Add an ActionListener to the "Next" button */
-	public void addActionListenerToNext(ActionListener listener) {
-		next.addActionListener(listener);
-	}
-	
-	/**
-	 * Set the text of all text fields to empty and set the color to white
-	 */
-	private void clear() {
-		for(int i=0; i<answers.length; i++) {
-			answerFields[i].setText("");
-			answerFields[i].setBackground(Color.WHITE);
-		}
-	}
+    GroupLayout layout = new GroupLayout(this);
+    this.setLayout(layout);
+    layout.setAutoCreateGaps(true);
+    layout.setAutoCreateContainerGaps(true);
+
+    layout.setHorizontalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+            .addComponent(verbPanel)
+            .addComponent(conjPanel)
+            .addGroup(
+                    layout.createSequentialGroup()
+                    .addComponent(check)
+                    .addComponent(showAnswers)
+                    .addComponent(clear)
+                    .addComponent(next)));
+    layout.setVerticalGroup(
+            layout.createSequentialGroup()
+            .addComponent(verbPanel)
+            .addComponent(conjPanel)
+            .addGroup(
+                    layout.createParallelGroup()
+                    .addComponent(check)
+                    .addComponent(showAnswers)
+                    .addComponent(clear)
+                    .addComponent(next)));
+  }
+
+  /**
+   * Respond to a button click on the Conjugation panel
+   * check highlights correct answers with green and incorrect answers with red
+   * showAnswers replaces all text fields with the correct values and highlight
+   *     them with green
+   * clear clears all text fields
+   * next proceeds to the next verb
+   */
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    // Check the answers in the textfields and indicate correctness with color
+    if(e.getSource() == check) {
+      for(int i=0; i<answers.length; i++) {
+        if(answerFields[i].getText().equalsIgnoreCase(answers[i])) {
+          answerFields[i].setBackground(GREEN);
+        }
+        else { 
+          answerFields[i].setBackground(RED); 
+        }
+      }
+    }
+    // Display the correct answers
+    else if(e.getSource() == showAnswers) { 
+      for(int i=0; i<answers.length; i++) {
+        answerFields[i].setText(answers[i]);
+        answerFields[i].setBackground(GREEN);
+      }
+    }
+    // Clear all text fields
+    else if(e.getSource() == clear || e.getSource() == next) {
+      clear();
+    }
+  }
+
+  /** Add an ActionListener to the "Next" button */
+  public void addActionListenerToNext(ActionListener listener) {
+    next.addActionListener(listener);
+  }
+
+  /**
+   * Set the text of all text fields to empty and set the color to white
+   */
+  private void clear() {
+    for(int i=0; i<answers.length; i++) {
+      answerFields[i].setText("");
+      answerFields[i].setBackground(Color.WHITE);
+    }
+  }
 }

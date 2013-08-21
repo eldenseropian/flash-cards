@@ -1,0 +1,14 @@
+cien _ 100
+ciento uno _ 101
+doscientos(as) _ 200
+trescientos(as) _ 300
+cuatrocientos(as) _ 400
+quinientos(as) _ 500
+seiscientos(as) _ 600
+setecientos(as) _ 700
+ochocientos(as) _ 800
+novecientos(as) _ 900
+mil _ 1.000
+cien mil _ 100.000
+un millón _ 1.000.000
+dos millones _ 2.000.000

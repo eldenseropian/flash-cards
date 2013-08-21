@@ -1,0 +1,74 @@
+la barra de herramientas _ toolbar
+el documento _ document
+el favorito _ bookmark
+el inicio _ startup
+el menú desplegable _ drop-down menu
+la página de inicio _ startup page
+la página principal _ home page
+adelante _ forward button
+anterior _ previous
+atrás/regresar _ back button
+siguiente _ next
+el asunto _ subject
+la bandeja de entrada _ inbox
+la bandeja salida _ outbox
+el correo basura _ junk mail/spam
+el(la) destinatario(a) _ recipient
+el(la) remitente _ sender
+adjuntar (un archivo) _ attach (a file)
+responder _ reply
+responder a todos _ reply to all
+agregar _ to add
+almacenar _ to store/to archive
+arrastrar _ to drag
+borrar _ to delete/erase
+cancelar _ to cancel
+comentar _ to comment
+cortar y pegar _ to cut and paste
+duplicar archivos _ to back up or duplicate a file
+elegir una opción _ to choose an option
+etiquetar fotos _ to label photos
+iniciar/cerrar (la) sesión _ to log in/to log out
+guardar cambios _ to save changes
+saltar _ to skip
+el archivo de contactos _ address book
+la búsqueda de contactos _ search for contacts
+los contactos personales _ personal contacts
+la charla _ chat
+la charla en tiempo real _ live chat
+la sala privada _ private chat room
+el(la) conocido(a) _ someone you know
+el(la) desconocido(a) _ someone you don't know
+el nombre de usuario _ user name
+la madrugada _ wee hours of the morning
+la mensajería instantánea _ instant messaging
+el perfil _ profile
+la red social _ social network
+los sitios de redes sociales (SRS) _ social networking sites
+el juego multijugador _ multiplayer game
+el lector digital _ e-reader
+el libro electrónico/el libro-e _ e-book
+el sistema GPS _ GPS
+la tableta _ tablet
+el teléfono inteligente _ smartphone
+el televisor de alta definición _ HDTV
+la biblioteca musical _ music library
+el e-mail en cadena _ chain email
+la interacción _ interaction
+la pantalla táctil _ touch screen
+el robatiempo _ a waste of time
+el salvavidas _ a lifesaver
+el texteo _ a text
+el tuiteo _ a tweet
+enviar/mandar mensajes _ to send texts
+textear _ to text
+tuitear _ to tweet
+el aviso _ notice/alert
+el carro de la compra _ shopping cart
+las condiciones de uso _ terms of agreement
+el mapa del sitio _ site map
+las preferencias _ preferences
+la privacidad _ privacy
+el servidor seguro _ secure server
+el sitio web seguro _ secure web site
+la transacción _ transaction

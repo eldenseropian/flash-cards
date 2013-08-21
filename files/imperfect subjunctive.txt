@@ -1,0 +1,10 @@
+CONJUGATION
+Instruction:Conjugate viajar (regular -ar) in the imperfect subjunctive
+Pronouns:SPANISH
+Answers:viajara,viajáramos,viajaras,viajarais,viajara,viajaran
+Instruction:Conjugate ver (regular -er) in the imperfect subjunctive
+Pronouns:SPANISH
+Answers:viera,viéramos,vieras,vierais,viera,vieran
+Instruction:Conjugate salir (regular -ir) in the imperfect subjunctive
+Pronouns:SPANISH
+Answers:saliera,saliéramos,salieras,salierais,saliera,salieran

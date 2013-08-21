@@ -1,0 +1,37 @@
+CONJUGATION
+Instruction:Conjugate viajar (regular -ar) in the conditional tense.
+Pronouns:SPANISH
+Answers:viajaría,viajaríamos,viajarías,viajaríais,viajaría,viajarían
+Instruction:Conjugate comer (regular -er) in the conditional tense.
+Pronouns:SPANISH
+Answers:comería,comeríamos,comerías,comeríais,comería,comerían
+Instruction:Conjugate escribir (regular -ir) in the conditional tense.
+Pronouns:SPANISH
+Answers:escribiría,escribiríamos,escribirías,escribiríais,escribiría,escribirían
+Instruction:Conjugate decir (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:diría,diríamos,dirías,diríais,diría,dirían
+Instruction:Conjugate hacer (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:harría,haríamos,harías,haríais,haría,harían
+Instruction:Conjugate poder (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:podría,podríamos,podrías,podríais,podría,podrían
+Instruction:Conjugate querer (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:querría,querríamos,querrías,querríais,querría,querrían
+Instruction:Conjugate saber (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:sabría,sabríamos,sabrías,sabríais,sabría,sabrían
+Instruction:Conjugate poner (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:pondría,pondríamos,pondrías,pondríais,pondría,pondrían
+Instruction:Conjugate salir (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:saldría,saldríamos,saldrías,saldríais,saldría,saldrían
+Instruction:Conjugate tener (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:tendría,tendríamos,tendrías,tendríais,tendría,tendrían
+Instruction:Conjugate venir (irregular) in the conditional tense.
+Pronouns:SPANISH
+Answers:vendría,vendríamos,vendrías,vendríais,vendría,vendrían

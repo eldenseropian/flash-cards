@@ -1,0 +1,78 @@
+la agencia de viajes _ travel agency
+la guía turística _ tourist guidebook
+el itinerario _ itinerary
+cambiar dinero _ to exchange money
+hacer una reservación _ to make a reservation
+hacer un tour _ to take a tour
+viajar al extranjero _ to travel abroad
+el aeropuerto _ airport
+el avión _ plane
+abordar _ to board
+aterrizar _ to land
+desembarcar _ to disembark
+despegar _ to take off
+facturar el equipaje _ to check baggage
+hacer escala en _ to make a stop in
+la aduana _ customs
+el asiento de pasillo _ aisle seat
+el asiento de ventanilla _ window seat
+el(la) asistente de vuelo _ flight attendant
+el boleto/el billete _ ticket
+de ida _ one-way
+de ida y vuelta _ round-trip
+con destino a _ headed to
+la línea aérea _ airline
+la lista de espera _ waiting list
+la llegada _ arrival
+la maleta _ suitcase
+el mostrador _ counter/check-in desk
+el pasaje _ ticket/fare
+el(la) pasajero(a) _ passenger
+de clase turista _ coach
+de primera clase _ first class
+el pasaporte _ passport
+la puerta (de embarque) _ (departure) gate
+el retraso/la demora _ delay
+la sala de equipajes _ baggage claim
+la salida _ departure
+la tarjeta de embarque _ boarding pass
+el vuelo _ flight
+el hotel _ hotel
+el aire acondicionado _ air conditioning
+el ascensor _ elevator
+el botones _ bellhop
+la conexión a Internet _ Internet connection
+el conserje _ concierge
+el desayuno incluido _ breakfast included
+la estampilla/el sello _ stamp
+la habitación sencilla/doble _ single/double room 
+con/sin baño/ducha _ with/without bath/shower
+de fumar/de no fumar _ smoking/non-smoking
+el(la) huésped(a) _ hotel guest
+el lavado en seco _ dry cleaning
+la llave _ key
+la recepción _ reception desk
+registrarse _ to register
+el secador de pelo _ hairdryer
+el servicio a la habitación _ room service
+el servicio despertador _ wake-up call
+la tarjeta postal _ postcard
+la televisión por cable _ cable tv
+este _ east
+oeste _ west
+norte _ north
+sur _ south
+la arena _ sand
+el bosque _ forest
+el cañón _ canyon
+el cielo _ sky
+el desierto _ desert
+la isla _ island
+el lago _ lake
+el mar _ sea
+el océano _ ocean
+la playa _ beach
+el río _ river
+las ruinas _ ruins
+la selva tropical _ tropical jungle
+el volcán _ volcano

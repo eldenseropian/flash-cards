@@ -7,6 +7,8 @@ public class CardList implements Iterable<FlashCard> {
   private ArrayList<FlashCard> learned;
   private ArrayList<FlashCard> notLearned;
 
+  private static final String NULL_ERROR = "Attempted to add null FlashCard";
+  
   /**
    * Creates an empty list of FlashCards
    */
@@ -21,7 +23,7 @@ public class CardList implements Iterable<FlashCard> {
    */
   public void add(FlashCard card) {
     if(card == null) {
-      throw new NullPointerException("Attempted to add null FlashCard.");
+      throw new NullPointerException(NULL_ERROR);
     }
     notLearned.add(card);
   }

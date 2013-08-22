@@ -1,6 +1,10 @@
 package gui;
 
-public class Pronouns {
+public class Constants {
+  static final String USER_DIRECTORY = "user.dir";
+  static final String ENCODING = "UTF-8";
+  static final String NEW_LINE = "\n";
+
   public static final String[] SPANISH = {"Yo", "Nosotros", "Tœ", "Vosotros",
     "ƒl/Ella/Usted", "Ellos/Ellas/Ustedes"}; 
 

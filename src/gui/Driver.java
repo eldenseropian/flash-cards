@@ -1,6 +1,7 @@
 //TODO: Replace all strings with constant vars
 //TODO: Use enum
 //TODO: Write tests
+
 package gui;
 
 import java.io.BufferedReader;
@@ -14,10 +15,73 @@ import javax.swing.JFileChooser;
 
 
 public class Driver {
+
+  /** The flash cards to test */
   private static CardList cards;
+
+  /** Where the user interaction takes place */
   private static BufferedReader console;
-  private static final int MARK_LEARNED = 0, QUIT = 1, TRY_AGAIN = 2,
-          SEE_ANSWER = 3, CONTINUE = 4, RESTART = 5, FLIP = 6, SWITCH_FILES = 7;
+
+  /** Choices the user can make when using the console */
+  public static enum Options {
+    MARK_LEARNED ("L"), QUIT ("Q"), TRY_AGAIN ("T"), SEE_ANSWER ("A"),
+    CONTINUE("C"), RESTART ("R"), FLIP ("F"), SWITCH_FILES ("S"), YES ("Y"),
+    NO ("N");
+
+    private final String command;
+
+    Options(String command) {
+      this.command = command;
+    }
+
+    public String toString() {
+      return this.command;
+    }
+
+    /**
+     * Return the Options corresponding to a command.
+     * @param command the command to get the Options for
+     * @return the Options corresponding to the command.
+     * @throws IOException if the command is unknown.
+     */
+    static Options getOptionFromCommand(String command) throws IOException {
+      for (Options option: Options.values()) {
+        if (option.toString().equals(command.trim().toUpperCase())) {
+          return option;
+        }
+      }
+      throw new IOException(INVALID_COMMAND_ERROR);
+    }
+  };
+
+  /** String constants in the card input file */
+  private static final String SIDE_DELIMITER = "_";
+  private static final String QUESTION_HEADER = "QUESTION: ";
+  private static final String ANSWER_HEADER = "ANSWER: ";
+
+  /** Messages printed during the interaction */
+  private static final String START_QUIZ = "The cards are currently set like" +
+          " this:\nFront: %s\nBack: %s\nWould you like to flip them? %s/%s";
+  private static final String FINISHED = 
+          "Congratulations! You've learned all the cards.";
+  private static final String CORRECT = "Right! ";
+  private static final String INCORRECT = "Wrong. ";
+  private static final String EXIT_MESSAGE = "Program terminated.";
+  private static final String CORRECT_ANSWER = "The correct answer is \"%s\"";
+  private static final String CORRECT_COMMANDS =
+          "'%s' to mark learned, '%s' to quit, %s to continue: ";
+  private static final String INCORRECT_COMMANDS = 
+          "'%s' to see the answer, '%s' to try again, '%s' to quit: ";
+  private static final String FINISHED_COMMANDS = "'%s' to restart, " + 
+          "'%s' to flip and restart, '%s' to switch files, '%s' to quit: ";
+
+  /** Error messages */
+  private static final String NO_FILE_SELECTED_ERROR =
+          "You cannot run this program without a flashcard file.";
+  private static final String FILE_CORRUPTED_ERROR = "Card file corrupted.";
+  private static final String INVALID_START_ERROR =
+          "%s to flip, %s to leave as is.";
+  private static final String INVALID_COMMAND_ERROR = "Invalid command.";
 
   /**
    * Read a card file, shuffle the cards, and begin running the interactive
@@ -42,23 +106,21 @@ public class Driver {
     cards.clear();
     try {
       JFileChooser fileChooser = new JFileChooser(System.getProperty(
-              "user.dir"));
+              Constants.USER_DIRECTORY));
       if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
         File file = fileChooser.getSelectedFile();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(file), "UTF-8"));
+                        new FileInputStream(file), Constants.ENCODING));
         while(in.ready()) {
           String card = in.readLine();
-          String q = card.substring(0, card.indexOf("_")).trim();
-          String a = card.substring(card.indexOf("_") + 1).trim();
+          String q = card.substring(0, card.indexOf(SIDE_DELIMITER)).trim();
+          String a = card.substring(card.indexOf(SIDE_DELIMITER) + 1).trim();
           cards.add(new FlashCard(q,a));
         }
         in.close();
-      }
-      else {
-        System.err.println(
-                "You cannot run this program without a flashcard file.");
+      } else {
+        System.err.println(NO_FILE_SELECTED_ERROR);
         quit();
         //TODO: add create new file option here
       }
@@ -68,30 +130,34 @@ public class Driver {
     //start with no cards and print an error message
     catch(IOException e) {
       e.printStackTrace();
-      throw new RuntimeException("Error: card file corrupted");
+      throw new RuntimeException(FILE_CORRUPTED_ERROR);
     }
     catch(StringIndexOutOfBoundsException e) {
       e.printStackTrace();
-      throw new RuntimeException("Error: card file corrupted");
+      throw new RuntimeException(FILE_CORRUPTED_ERROR);
     }
   }
 
   /**
-   * Run the interactive flashcard program.
+   * Run the interactive flash card program.
    */
   private static void run() {
     console = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("The cards are currently set like this:");
-    System.out.println("Front: " + cards.get(0).question());
-    System.out.println("Back: " + cards.get(0).answer());
-    System.out.println("Would you like to flip them? Y/N");
+    System.out.println(String.format(START_QUIZ, cards.get(0).question(),
+            cards.get(0).answer(), Options.YES, Options.NO));
     try {
       String toFlip = console.readLine();
-      while(!toFlip.equalsIgnoreCase("Y") && !toFlip.equalsIgnoreCase("N")) {
-        System.out.println("Invalid input. Y to flip, N to leave as is.");
+      //TODO: make this function call driven
+      while(Options.getOptionFromCommand(toFlip) != Options.YES &&
+              Options.getOptionFromCommand(toFlip) != Options.NO) {
+        System.out.println(INVALID_COMMAND_ERROR);
+        System.out.println(String.format(INVALID_START_ERROR, Options.YES, 
+                Options.NO));
         toFlip = console.readLine();
       }
-      if(toFlip.equalsIgnoreCase("Y")) { cards.flip(); }
+      if(toFlip.equalsIgnoreCase(Options.YES.toString())) {
+        cards.flip();
+      }
     }
     catch(IOException e) {
       throw new RuntimeException(e.toString());
@@ -105,11 +171,20 @@ public class Driver {
         cards.shuffle();
       }
     }
-    System.out.println("Congratulations! You've learned all the cards.");
-    int choice = finishedMenu();
-    if(choice == QUIT) { quit(); }
-    else if(choice == SWITCH_FILES) { readCards(); }
-    else if(choice == FLIP) { cards.flip(); }
+    System.out.println(FINISHED);
+    switch (finishedMenu()) {
+      case QUIT:
+        quit();
+        break;
+      case SWITCH_FILES:
+        readCards();
+        break;
+      case FLIP:
+        cards.flip();
+        break;
+      default:
+        throw new RuntimeException(INVALID_COMMAND_ERROR);
+    }
     cards.reset();
     clearScreen();
     run();
@@ -121,94 +196,90 @@ public class Driver {
    * @return true if a card has been learned
    */
   private static boolean askQuestion(FlashCard card) {
-    System.out.println("\nQUESTION: " + card.question());
-    System.out.print("ANSWER: ");
+    System.out.println(Constants.NEW_LINE + QUESTION_HEADER + card.question());
+    System.out.print(ANSWER_HEADER);
     try {
       String answer = console.readLine();
-      if(answer.equalsIgnoreCase("quit")) { quit(); }
-      int choice;
+      if(answer.equalsIgnoreCase(Options.QUIT.toString())) { 
+        quit(); 
+      }
       if(card.isCorrect(answer)) {
-        System.out.print("Right! ");
-        choice = correctAnswerMenu();
-        if(choice == MARK_LEARNED) { 
-          cards.markLearned(card); 
-          return true; 
+        System.out.print(CORRECT);
+        switch (correctAnswerMenu()) {
+          case MARK_LEARNED:
+            cards.markLearned(card); 
+            return true; 
+          case QUIT:
+            quit();
+          case CONTINUE:
+            return false;
+          default:
+            throw new IOException(INVALID_COMMAND_ERROR);
+        }
+      } else {
+        System.out.print(INCORRECT);
+        switch (incorrectAnswerMenu()) {
+          case SEE_ANSWER:
+            System.out.println(String.format(CORRECT_ANSWER, card.answer())); 
+            return false;
+          case TRY_AGAIN:
+            return askQuestion(card);
+          case QUIT:
+            quit();
+          default:
+            throw new IOException(INVALID_COMMAND_ERROR);
+            //TODO: this should show the command options again instead of
+            // asking the question again
         }
       }
-      else {
-        System.out.print("Wrong. ");
-        choice = incorrectAnswerMenu();
-        if(choice == SEE_ANSWER) { 
-          System.out.println("The correct answer is \"" + card.answer() + "\""); 
-          return false;
-        }
-        else if(choice == TRY_AGAIN) { return askQuestion(card); }
-      }
-      if(choice == QUIT) { quit(); }
-    }
-    catch(IOException e) {
-      System.out.println("Error: invalid input.");
+    } catch(IOException e) {
+      System.out.println(INVALID_COMMAND_ERROR);
       return askQuestion(card);
     }
-    return false;
   }
 
   /**
-   * Display options after a correct answer is inputted
+   * Display options after a correct answer is inputed
    * @return the menu item selected
    */
-  private static int correctAnswerMenu() {
-    System.out.print("'L' to mark learned, 'Q' to quit, Enter to continue: ");
+  private static Options correctAnswerMenu() {
+    System.out.print(String.format(CORRECT_COMMANDS, Options.MARK_LEARNED,
+            Options.QUIT, Options.CONTINUE));
     try {
-      String choice = console.readLine();
-      if(choice.equalsIgnoreCase("L")) { return MARK_LEARNED; }
-      else if(choice.equalsIgnoreCase("Q")) { return QUIT; }
-      else if(choice.equalsIgnoreCase("")) { return CONTINUE; }
+      return Options.getOptionFromCommand(console.readLine());
+    } catch (IOException e) {
+      System.out.print(INVALID_COMMAND_ERROR);
+      return correctAnswerMenu();
     }
-    catch (IOException e) { }
-
-    //do this if input caused exception or if input is not a valid choice
-    System.out.print("Invalid input. ");
-    return correctAnswerMenu();
   }
 
   /**
-   * Display options after an incorrect answer is inputted
+   * Display options after an incorrect answer is inputed
    * @return the menu item selected
    */
-  private static int incorrectAnswerMenu() {
-    System.out.print(
-            "'A' to see the answer, Enter to try again, 'Q' to quit: ");
+  private static Options incorrectAnswerMenu() {
+    System.out.print(String.format(INCORRECT_COMMANDS, Options.SEE_ANSWER,
+            Options.TRY_AGAIN, Options.QUIT));
     try {
-      String choice = console.readLine();
-      if(choice.equalsIgnoreCase("A")) { return SEE_ANSWER; }
-      else if(choice.equalsIgnoreCase("")) { return TRY_AGAIN; }
-      else if(choice.equalsIgnoreCase("Q")) { return QUIT; }
+      return Options.getOptionFromCommand(console.readLine());
+    } catch (IOException e) {
+      System.out.println(INVALID_COMMAND_ERROR);
+      return incorrectAnswerMenu();
     }
-    catch (IOException e) {}
-
-    //do this if input caused exception or if input is not a valid choice
-    System.out.print("Invalid input. ");
-    return incorrectAnswerMenu();
   }
 
   /**
    * Display options when all cards have been answered correctly
    * @return the menu item selected
    */
-  private static int finishedMenu() {
-    System.out.print("'R' to restart, 'F' to flip and restart, " + 
-            "'S' to switch files, 'Q' to quit: ");
+  private static Options finishedMenu() {
+    System.out.print(String.format(FINISHED_COMMANDS, Options.RESTART,
+            Options.FLIP, Options.SWITCH_FILES, Options.QUIT));
     try {
       String choice = console.readLine();
-      if(choice.equalsIgnoreCase("R")) { return RESTART; }
-      else if (choice.equalsIgnoreCase("F")) { return FLIP; }
-      else if (choice.equalsIgnoreCase("S")) { return SWITCH_FILES; }
-      else if (choice.equalsIgnoreCase("Q")) { return QUIT; }
-    }
-    catch(IOException e) {}
-    //do this if input caused exception or if input is not a valid choice
-    System.out.print("Invalid input. ");
+      return Options.getOptionFromCommand(choice);
+    } catch(IOException e) {}
+    System.out.print(INVALID_COMMAND_ERROR);
     return finishedMenu();
   }
 
@@ -216,7 +287,7 @@ public class Driver {
    * Exit the program.
    */
   private static void quit() {
-    System.out.println("Program terminated.");
+    System.out.println(EXIT_MESSAGE);
     System.exit(0);
   }
 
@@ -224,6 +295,8 @@ public class Driver {
    * Clear the screen by writing newlines.
    */
   private static void clearScreen() {
-    for(int i=0; i<50; i++) { System.out.println("\n"); }
+    for(int i=0; i<50; i++) {
+      System.out.println(Constants.NEW_LINE);
+    }
   }
 }

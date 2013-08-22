@@ -1,4 +1,3 @@
-//TODO: Replace all strings with constant vars
 //TODO: write tests
 
 package gui;
@@ -52,7 +51,7 @@ public class ConjugationDriver extends JFrame implements ActionListener {
       Conjugation conj = new Conjugation(pronouns.get(i), instructions.get(i), 
               conjugations.get(i));
       conj.addActionListenerToNext(this);
-      panel.add(conj, ""+i);
+      panel.add(conj, String.valueOf(i));
     }
 
     add(panel);
@@ -92,7 +91,7 @@ public class ConjugationDriver extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent arg0) {
     currentIndex = (currentIndex + 1) % NUM_VERBS;
-    ((CardLayout) panel.getLayout()).show(panel, "" + currentIndex);
+    ((CardLayout) panel.getLayout()).show(panel, String.valueOf(currentIndex));
     pack();
   }
 }

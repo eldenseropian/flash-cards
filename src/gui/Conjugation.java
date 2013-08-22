@@ -22,6 +22,22 @@ public class Conjugation extends JPanel implements ActionListener {
   /** Eclipse auto-generated serial ID */
   private static final long serialVersionUID = 7497640647858167887L;
 
+  /** Error messages */
+  private static final String NULL_ERROR =
+          "Null parameter to Conjugation constructor";
+  private static final String EMPTY_ERROR =
+          "Empty parameter to Conjugation constructor";
+  private static final String MISSING_QUESTION_OR_ANSWER_ERROR = 
+          "Unmatched number of questions to answers.";
+
+  /** Button labels */
+  private static final String CHECK_TEXT = "Check";
+  private static final String SHOW_ANSWERS_TEXT = "Show Answers";
+  private static final String CLEAR_TEXT = "Clear";
+  private static final String NEXT_TEXT = "Next";
+
+  private static final String CLEARED_FIELD_TEXT = "";
+
   /** Color to display for correct answers */
   private static final Color GREEN = new Color(152, 251, 152);
 
@@ -61,12 +77,10 @@ public class Conjugation extends JPanel implements ActionListener {
    */
   public Conjugation(String[] pronouns, String instructions, String[] answers) {
     if(pronouns == null || instructions == null || answers == null) {
-      throw new IllegalArgumentException(
-              "Null parameter to Conjugation constructor");
+      throw new IllegalArgumentException(NULL_ERROR);
     }
     if(pronouns.length == 0 || instructions.length() == 0) {
-      throw new IllegalArgumentException(
-              "Empty parameter to Conjugation constructor");
+      throw new IllegalArgumentException(EMPTY_ERROR);
     }
     if(pronouns.length != answers.length) {
       for(String p: pronouns) {
@@ -77,8 +91,7 @@ public class Conjugation extends JPanel implements ActionListener {
         System.out.print(a);
       }
       System.out.println();
-      throw new IllegalArgumentException(
-              "Unmatched number of questions to answers.");
+      throw new IllegalArgumentException(MISSING_QUESTION_OR_ANSWER_ERROR);
     }
 
     this.answers = answers;
@@ -104,16 +117,16 @@ public class Conjugation extends JPanel implements ActionListener {
       conjPanel.add(answerFields[i]);
     }
 
-    check = new JButton("Check");
+    check = new JButton(CHECK_TEXT);
     check.addActionListener(this);
 
-    showAnswers = new JButton("Show Answers");
+    showAnswers = new JButton(SHOW_ANSWERS_TEXT);
     showAnswers.addActionListener(this);
 
-    clear = new JButton("Clear");
+    clear = new JButton(CLEAR_TEXT);
     clear.addActionListener(this);
 
-    next = new JButton("Next");
+    next = new JButton(NEXT_TEXT);
     next.addActionListener(this);
 
     GroupLayout layout = new GroupLayout(this);
@@ -187,7 +200,7 @@ public class Conjugation extends JPanel implements ActionListener {
    */
   private void clear() {
     for(int i=0; i<answers.length; i++) {
-      answerFields[i].setText("");
+      answerFields[i].setText(CLEARED_FIELD_TEXT);
       answerFields[i].setBackground(Color.WHITE);
     }
   }

@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
+/**
+ * An iterable list of flash cards.
+ */
 public class CardList implements Iterable<FlashCard> {
   private ArrayList<FlashCard> learned;
   private ArrayList<FlashCard> notLearned;

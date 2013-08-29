@@ -1,5 +1,8 @@
 package gui;
 
+/**
+ * Models a two-sided flash card.
+ */
 public class FlashCard {
   private String front, back;
 

@@ -1,17 +1,17 @@
 package gui;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
+import java.util.List;
 
 /**
  * An iterable list of flash cards.
  */
-public class CardList implements Iterable<FlashCard> {
+public class CardList {
   private ArrayList<FlashCard> learned;
   private ArrayList<FlashCard> notLearned;
 
-  private static final String NULL_ERROR = "Attempted to add null FlashCard";
-  
+  private static final String NULL_ERROR = "Attempted to add null FlashCard.";
+  private static final String DUPLICATE_CARD_ERROR = "Card already in list.";
   /**
    * Creates an empty list of FlashCards
    */
@@ -21,12 +21,16 @@ public class CardList implements Iterable<FlashCard> {
   }
 
   /**
-   * Adds a FlashCard to the not learned list
-   * @param card the card to add
+   * Adds a new FlashCard to the not learned list
+   * @param card the card to add.
+   * @throws NullPointerException if card is null
+   * @throws IllegalArgumentException if card is already in the list
    */
   public void add(FlashCard card) {
     if(card == null) {
       throw new NullPointerException(NULL_ERROR);
+    } else if (notLearned.contains(card) || learned.contains(card)) {
+      throw new IllegalArgumentException(DUPLICATE_CARD_ERROR);
     }
     notLearned.add(card);
   }
@@ -35,16 +39,12 @@ public class CardList implements Iterable<FlashCard> {
    * Flip all the cards in the list.
    */
   public void flip() {
-    for(FlashCard card: learned) { card.flip(); }
-    for(FlashCard card: notLearned) { card.flip(); }
-  }
-
-  /**
-   * Get an iterator over the list of not learned cards
-   * @return iterator over the list of not learned cards
-   */
-  public Iterator<FlashCard> iterator() {
-    return notLearned.iterator();
+    for(FlashCard card: learned) {
+      card.flip(); 
+    }
+    for(FlashCard card: notLearned) { 
+      card.flip(); 
+    }
   }
 
   /**
@@ -72,6 +72,13 @@ public class CardList implements Iterable<FlashCard> {
     return notLearned.get(index);
   }
 
+  public List<FlashCard> getCards() {
+    ArrayList<FlashCard> allCards = new ArrayList<FlashCard>();
+    allCards.addAll(notLearned);
+    allCards.addAll(learned);
+    return allCards;
+  }
+  
   /**
    * Remove all cards from the list.
    */

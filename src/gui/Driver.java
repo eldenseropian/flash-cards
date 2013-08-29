@@ -1,5 +1,3 @@
-//TODO: Replace all strings with constant vars
-//TODO: Use enum
 //TODO: Write tests
 
 package gui;

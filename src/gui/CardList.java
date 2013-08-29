@@ -12,6 +12,9 @@ public class CardList {
 
   private static final String NULL_ERROR = "Attempted to add null FlashCard.";
   private static final String DUPLICATE_CARD_ERROR = "Card already in list.";
+  private static final String CARD_NOT_FOUND_ERROR = "Card not found in not " +
+          "learned list.";
+
   /**
    * Creates an empty list of FlashCards
    */
@@ -59,7 +62,7 @@ public class CardList {
    * Get the number of not learned cards
    * @return number of not learned cards
    */
-  public int numNotLearned() {
+  public int getNumNotLearned() {
     return notLearned.size();
   }
 
@@ -78,7 +81,7 @@ public class CardList {
     allCards.addAll(learned);
     return allCards;
   }
-  
+
   /**
    * Remove all cards from the list.
    */
@@ -87,7 +90,15 @@ public class CardList {
     learned.clear();
   }
 
+  /**
+   * Mark a card as learned.
+   * @param card the card to mark learned.
+   * @throws IllegalArgumentException if card is not in unlearned list.
+   */
   public void markLearned(FlashCard card) {
+    if (!notLearned.contains(card)) {
+      throw new IllegalArgumentException(CARD_NOT_FOUND_ERROR);
+    }
     learned.add(card);
     notLearned.remove(card);
   }

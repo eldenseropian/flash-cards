@@ -162,10 +162,13 @@ public class Driver {
     }
 
     int i = 0;
-    while(cards.numNotLearned() > 0) {
-      if(!askQuestion(cards.get(i))) { i++; }
-      if(i >= cards.numNotLearned() && cards.numNotLearned() > 0) {
-        i %= cards.numNotLearned();
+    while(cards.getNumNotLearned() > 0) {
+      if(!askQuestion(cards.get(i))) {
+        i++;
+      }
+      int numNotLearned = cards.getNumNotLearned();
+      if(i >= numNotLearned && numNotLearned > 0) {
+        i %= numNotLearned;
         cards.shuffle();
       }
     }
